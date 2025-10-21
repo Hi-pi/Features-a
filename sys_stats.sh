@@ -5,18 +5,27 @@
 #************************************#
 
 # Make a directory called System_Stats and change directories to that directory
+mkdir System_stats
+cd System_stats
 # Try to make the output for each file look as neat and organized as you can.
 
 # Output the following information to a file called kernel
+touch kernel.txt
     # 1. Kernel Name
+    uname
     # 2. Kernel Release
+    sudo lshw -short
     # 3. Kernel Version
+    sudo lshw -html > lshw.html 
     # 4. The operating system
+    lscpu
 
 
 # Output the following information to a file called network
+touch network.txt
     # 1. Do not print any serial numbers or sensitive information related to the system
     # 2. All network interfaces
+    netstat
     
     
 # Output the following information to a file called disk.html
