@@ -20,7 +20,7 @@ touch kernel.txt
     sudo lshw -html > lshw.html 
     # 4. The operating system
     lscpu
-    } > System_Stats/kernel
+    } > System_Stats/kernel.txt
 
 
 # Output the following information to a file called network
@@ -29,7 +29,7 @@ touch network.txt
     # 2. All network interfaces
     {
     netstat
-    } > System_Stats/network
+    } > System_Stats/network.txt
     
 # Output the following information to a file called disk.html
 touch disk.html
