@@ -26,7 +26,7 @@ cd System_Stats
     # 1. Do not print any serial numbers or sensitive information related to the system
     # 2. All network interfaces
     {
-    netstat
+    lshw -html > lshw.html
     } > network
     
 # Output the following information to a file called disk.html
