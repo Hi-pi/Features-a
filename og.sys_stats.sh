@@ -12,13 +12,13 @@ cd System_Stats
 # Output the following information to a file called kernel
     # 1. Kernel Name
    {
-    uname
+    uname -s
     # 2. Kernel Release
-    sudo lshw -short
+    uname -r
     # 3. Kernel Version
-    sudo lshw -html > lshw.html 
+    uname -v
     # 4. The operating system
-    lscpu
+    uname -o
     } > kernel
 
 
