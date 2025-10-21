@@ -6,11 +6,10 @@
 
 # Make a directory called System_Stats and change directories to that directory
 mkdir System_Stats
-cd System_Stats || exit
+cd System_Stats
 # Try to make the output for each file look as neat and organized as you can.
 
 # Output the following information to a file called kernel
-touch kernel.txt
     # 1. Kernel Name
    {
     uname
@@ -20,19 +19,17 @@ touch kernel.txt
     sudo lshw -html > lshw.html 
     # 4. The operating system
     lscpu
-    } > System_Stats/kernel.txt
+    } > kernel
 
 
 # Output the following information to a file called network
-touch network.txt
     # 1. Do not print any serial numbers or sensitive information related to the system
     # 2. All network interfaces
     {
     netstat
-    } > System_Stats/network.txt
+    } > network
     
 # Output the following information to a file called disk.html
-touch disk.html
     # 1. All disks
     {
     df -h
@@ -48,7 +45,7 @@ touch disk.html
   lscpu | head -n 5
   echo
   lscpu | tail -n 12
-} > Systems_Stats/cpu
+} > cpu
 
 
 # Output the following information to a file called block_dev
@@ -56,7 +53,7 @@ touch disk.html
     # 2. The output should use ascii characters for any tree formatting
     {
     lsblk -o NAME,SIZE,TYPE -a --ascii 
-   } > System_Stats/block_dev
+   } > block_dev
 
     {
   lsblk -o NAME,SIZE,TYPE,TRAN --ascii | grep 'sata'
@@ -64,6 +61,6 @@ touch disk.html
   for dev in $(lsblk -d -o NAME,TRAN | awk '$2 == "sata" {print $1}'); do
     udevadm info --query=all --name="/dev/$dev"
   done
-} > System_Stats/sata
+} > sata
 
     
