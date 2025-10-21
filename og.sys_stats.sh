@@ -58,9 +58,8 @@ cd System_Stats
     {
   lsblk -o NAME,SIZE,TYPE,TRAN --ascii | grep 'sata'
 
-  for dev in $(lsblk -d -o NAME,TRAN | awk '$2 == "sata" {print $1}'); do
+ lsblk -d -o NAME,TRAN | awk '$2 == "sata"
     udevadm info --query=all --name="/dev/$dev"
-  done
 } > sata
 
     
